@@ -37,6 +37,9 @@ Kemalyst::I18n.config do |config|
 	config.load_path += ["./locales"]
 end
 
+# !! don't forget to init !!
+I18n.init
+
 ```
 
 ## Contributing
