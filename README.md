@@ -14,19 +14,30 @@ dependencies:
 
 ## Usage
 
-Create a file named
+Create a file : config/i18n.cr
 ```crystal
 require "kemalyst-i18n"
 
-Kemalyst::Application.config do |config|
+Kemalyst::I18n.config do |config|
+	# Backend default to I18n::Backend::Yaml
+	# config.backend = I18n::Backend::Yaml.new
+	
+	# Default locale ( default to "en" )
+	# config.default_locale = "en"
+	
+	# Separator between sub levels of data (default to '.')
+	# ex : I18n.translate("some#thing") instead of "some.thing" 
+	# config.default_separator = '.'
+	
+	# Returns the current exception handler. Defaults to an instance of
+    # I18n::ExceptionHandler.
+    # config.exception_handler = ExceptionHandler.new
+	
+	# The path from where the translations should be loaded
+	config.load_path += ["./locales"]
+end
 
 ```
-
-TODO: Write usage instructions here
-
-## Development
-
-TODO: Write development instructions here
 
 ## Contributing
 
