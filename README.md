@@ -41,6 +41,19 @@ end
 I18n.init
 
 ```
+Add the handler to the list into config/application.cr
+```crystal
+Kemalyst::Application.config do |config|
+	...
+	# place it BEFORE the router
+	handlers = [
+		...
+		Kemalyst::I18n::Handler.instance,
+		Kemalyst::Handler::Router.instance
+	]
+	...
+end
+```
 
 ## Contributing
 
