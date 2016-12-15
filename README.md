@@ -1,4 +1,4 @@
-:# kemalyst-i18n
+# kemalyst-i18n
 
 I18n integration to kemalyst framework
 
